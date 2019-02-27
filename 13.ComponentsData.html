@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Components Data</title>
+    <style type="text/css">body{padding-top: 30px}</style>
+</head>
+<body>
+<div id="app" class="container">
+    <posts :data="24"></posts>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+    Vue.component('posts', {
+        props:['data'],
+        template: `
+
+         <h1 @click="display">{{message}}<br> The student is number  <button btn btn-primary<a href="https://www.facebook.com"> {{data}}</a></button>
+         <table style="width:100%">
+                          <tr>
+                            <th>Firstname</th>
+                            <th>Lastname</th>
+                            <th>Age</th>
+                          </tr>
+                          <tr>
+                            <td>Jill</td>
+                            <td>Smith</td>
+                            <td>50</td>
+                          </tr>
+                          <tr>
+                            <td>Eve</td>
+                            <td>Jackson</td>
+                            <td>94</td>
+                          </tr>
+                        </table></h1>
+        `,
+        data() {
+            return {
+                message: 'Hellow Marvin,VUEJS is so fun!!.VueJS is the most interesting frontend framework i have come across this year 2019'
+            }
+        },
+
+        methods: {
+            display(){
+                console.log('hello to the other side');
+            }
+        }
+    });
+
+    let vm = new Vue({
+        el: '#app',
+    })
+</script>
+</body>
+</html>
+

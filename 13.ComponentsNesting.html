@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Components Data</title>
+    <style type="text/css">body{padding-top: 30px}</style>
+</head>
+<body>
+<div id="app" class="container">
+    <posts :data="24"></posts>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+//Mother component
+    Vue.component('posts', {
+        template: `
+
+          <div>
+                <ul>
+                   <post v-for="post in posts" :key="post.id">
+                   <table style="width:100%">
+                        <td>{{post.id}}</td>&nbsp;&nbsp;
+                        <td :style="styleObject">{{post.title}}</td>&nbsp;&nbsp;
+                        <td :style="styleObject1">{{post.body}}</td>
+                   </table>
+                   </post>
+                </ul>
+          </div>
+
+        `,
+        data() {
+            return {
+                //posts array
+                posts: [
+                    {id: 1, title: 'VueJs is JS on Steroids', body: ' VueJs is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.'},
+                    {id: 2, title: 'VueJs is JS on Steroids', body: ' VueJs is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.'},
+                    {id: 3, title: 'VueJs is JS on Steroids', body: ' VueJs is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.'},
+                    {id: 4, title: 'VueJs is JS on Steroids', body: ' VueJs is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.'},
+                    {id: 5, title: 'VueJs is JS on Steroids', body: ' VueJs is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.'},
+                    {id: 6, title: 'VueJs is JS on Steroids', body: ' VueJs is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.'},
+                    {id: 7, title: 'VueJs is JS on Steroids', body: ' VueJs is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.'},
+                    {id: 8, title: 'VueJs is JS on Steroids', body: ' VueJs is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.'},
+                    {id: 9, title: 'VueJs is JS on Steroids', body: ' VueJs is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.'},
+                    {id: 10, title: 'VueJs is JS on Steroids', body: ' VueJs is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.'},
+                    {id: 11, title: 'VueJs is JS on Steroids', body: ' VueJs is a progressive framework for building user interfaces. Unlike other monolithic frameworks, Vue is designed from the ground up to be incrementally adoptable. The core library is focused on the view layer only, and is easy to pick up and integrate with other libraries or existing projects. On the other hand, Vue is also perfectly capable of powering sophisticated Single-Page Applications when used in combination with modern tooling and supporting libraries.'},
+                       ],
+                styleObject: {
+                    color: 'red',
+                    fontSize: '20px',
+                    fontFamily: 'arial'
+                }, styleObject1: {
+
+                    color: 'blue',
+                    fontSize: '20px',
+                    fontFamily: 'sans'
+
+                }
+            }
+        },
+
+        methods: {
+            display(){
+                console.log('hello to the other side');
+            }
+        }
+    });
+    //component for each individual Post
+    Vue.component('post', {
+        template: '<li><slot></slot></li>'
+    });
+
+    let vm = new Vue({
+        el: '#app',
+    })
+</script>
+</body>
+</html>
+

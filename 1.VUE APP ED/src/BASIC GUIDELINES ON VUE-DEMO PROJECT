@@ -1,0 +1,146 @@
+#Install Node
+//Go to Vuejs Docs and install Vue as shown below
+    npm install -g @vue/cli-service-global
+//Test node and Vue
+    node -v
+    vue --version
+    vue
+//Upon using the cli,webpack and barbel and node modules are auto added.
+
+    Create a Vue Project
+ //Run the code below
+   vue init webpack demo
+
+
+
+//next run the deveopment server
+    npm run dev
+    npm run build
+    npm run start
+
+            CREATING A VUEJS Component
+
+-Under Components, create new posts.vue
+-each component should have a template,script and style
+-Give each component a selector(name in script)
+
+            <script>
+            //export data of the template
+            export default {
+            //selector name
+            name: 'PostsExample',
+            data () {
+            return {
+            msg: 'VueJs just gets more and more interesting'
+            }
+            }
+            }
+            </script>
+
+- register the component in the App.Vue both as an import and export as shown
+
+            <script>
+            import HelloWorld from './components/HelloWorld'
+            import PostsExample from './components/Posts'
+
+            export default {
+            name: 'App',
+            components: {
+            HelloWorld,
+            PostsExample
+            }
+            }
+            </script>
+
+-Register the component in the templates section also
+            <template>
+            <div id="app">
+            <img src="./assets/logo.png">
+            <HelloWorld/>
+            <!--For the new Post component-->
+            <PostsExample/>
+            </div>
+            </template>
+
+        BOOTSTRAP
+//visit the docs below for installation
+        https://bootstrap-vue.js.org/docs
+//Input Bootsrap naviagtion on App.Vue after the div id
+//import JS functionality ine index.html at the root of the project
+        <!DOCTYPE html>
+        <html>
+          <head>
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width,initial-scale=1.0">
+            <title>demo</title>
+          </head>
+          <body>
+            <div id="app"></div>
+            <!-- built files will be auto injected -->
+          <!-- JS FUNCTIONALITY-->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+          </body>
+        </html>
+
+--------------------------------------------------------------
+   USING RESTFUL API DATA in the posts nody
+--------------------------------------------------------------
+Link:  https://jsonplaceholder.typicode.com/
+Install AXIOS which is used to make client requests to API
+    npm install axios
+//In the Post Component,  just after the data object, add a created lifecycle function as show below  and test output on the console
+
+            <script>
+            //export data of the template
+            export default {
+            //selector name
+            name: 'PostsExample',
+            data () {
+            return {
+            //Data Population
+            posts: [
+
+            ]
+            }
+            },
+            created() {
+            console.log('Initiated the Life Cycle')
+
+            }
+            }
+
+            </script>
+
+-Then use a create function to pull data from APi and consume it as shown
+            created() {
+            // console.log('Initiated the Life Cycle')
+            axios.get('https://jsonplaceholder.typicode.com/posts').then(posts=>{
+
+            this.posts = posts.data
+
+            });
+
+            }
+-----------------------------------------------------------------------------------------------
+                        ROUTING
+-----------------------------------------------------------------------------------------------
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

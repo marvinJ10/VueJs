@@ -1,0 +1,27 @@
+<div id="root">
+  <button :disabled="active" @click="toggle">DISS ME</button>
+  </div>
+  
+  <body>
+  <script src="https://unpkg.com/vue@2.4.2"></script>
+  <script>
+  
+  // document.querySelector('#input').value=data.message;
+  var app=new Vue({
+  el:'#root',
+  data:{
+  
+  active:false
+  
+  },
+  methods:{
+  toggle (){
+  this.active=true;
+  
+  }
+  
+  }
+  
+  });
+  
+  </script>

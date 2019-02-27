@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>List Rendering</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css"
+        integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container py-5" id="app">
+        <h2>Top 10 Frameworks</h2>
+        <ul class="list-group">
+            <li class="list-group-item" v-for="(topTenFramework, index) in topTenFrameworks" :key="topTenFramework.id">
+                {{ topTenFramework.id }}
+                {{ topTenFramework.body }}
+            </li>
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                topTenFrameworks: [
+                    {id: 1, body: 'ASP.NET'},{id: 2, body: 'AngularJS '},{id: 3, body: 'Ruby on Rails'},{id: 4, body: 'ASP.NET MVC'},{id: 5, body: 'React'},
+                    {id: 6, body: 'Django'},{id: 7, body: 'Angular'},{id: 8, body: 'Laravel'},{id: 9, body: 'Spring'},{id: 10, body: 'Express'}
+                ]
+            }
+        })
+    </script>
+</body>
+
+</html>

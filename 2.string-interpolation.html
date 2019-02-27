@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>String Interpolation</title>
+    <style type="text/css">body{padding-top: 30px}</style>
+</head>
+<body>
+
+<div id="app" class="container">
+    {{ message }} <br>
+    {{ number * 20+200-10 }} <br>
+    {{ isActive ? 'is Active' : 'Is Not Active'}} <br>
+    {{ message.split('').reverse('').join('') }}  <br>
+
+
+</div>
+
+
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+   var matchy= new Vue({
+        el: '#app',
+        data: {
+            message: '1st Vue Message',
+            number: 200,
+            isActive: true
+
+        }
+    })
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Vue Components</title>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #f5f5f5;
+        font-family: Roboto, Arial, sans-serif;
+        font-size: 14px;
+    }
+
+    div {
+        max-width: 400px;
+        margin: 48px auto;
+        padding: 30px;
+        background: white;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .14);
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    label {
+        display: inline-block;
+        cursor: pointer;
+        margin-bottom: 8px;
+    }
+
+    .success {
+        color: green;
+    }
+
+</style>
+</head>
+<body>
+<!--set the id for vue js referencing-->
+<div id="games">
+    <h2>All games</h2>
+    <ul>
+        <li v-for="game in games"><input type="checkbox" v-model="game.isComplete"/>{{ game.description }}</li>
+    </ul>
+
+    <!-- <h2>Incomplete games</h2>
+    <ul v-if="incompleteGames[0]">
+        <li v-for="game in incompleteGames">
+            <label>
+                <input type="checkbox" v-model="game.isComplete"> {{game.description}}
+            </label>
+        </li>
+    </ul> 
+    <p v-else class="success"><b>Nice! All your games are completed.</b></p> 
+    -->
+
+    <h2>My games</h2>
+    <ul v-if="completegames[0]">
+        <li v-for="game in completegames">
+            <label>
+                <input type="checkbox" v-model="game.isComplete"> {{game.description}}
+            </label>
+        </li>
+    </ul>
+    <p v-else><b>Select Games fo view here</b></p>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+<!--component to be imported -->
+<script>
+    new Vue({
+        el: '#games',
+
+        data: {
+            games: [
+                { description: 'Arsenal Vs Man U',     isComplete: false },
+                { description: 'Chelsea Vs Man City',  isComplete: false },
+                { description: 'Southampton Vs QPR',   isComplete: false }, 
+                { description: 'Heartland Vs Gombe',   isComplete: false }, 
+                { description: 'Sanat Naft Vs Ahli',   isComplete: false }, 
+                { description: 'Barcelona Vs BVB',     isComplete: false }
+                    ]
+        },
+
+        computed: {
+            incompleteGames() {
+                return this.games.filter(game => !game.isComplete)
+            },
+            completegames() {
+                return this.games.filter(game => game.isComplete)
+            }
+        }
+    })
+
+</script>
+
+</body>
+</html>

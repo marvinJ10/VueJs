@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Components Inline</title>
+    <style type="text/css">body{padding-top: 30px}</style>
+</head>
+<body>
+<div id="app">
+    <posts inline-template>
+        <h1 @click="display">Vue JS is the most interesting frontend framework i have come across this year 2019</h1>
+    </posts>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+    Vue.component('posts', {
+
+        data() {
+            return {
+            }
+        },
+
+        methods: {
+            display(){
+                console.log('hello to the othe side');
+            }
+        }
+    });
+
+    let vm = new Vue({
+        el: '#app',
+    })
+</script>
+</body>
+</html>
+

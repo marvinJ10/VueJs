@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamically Add Items to a List</title>
+</head>
+<body>
+<!--set the id for vue js referencing-->
+<div id="root">
+    <P>Major Clubs in England</P>
+    <ul>
+        <li v-for="club in clubs">{{ club }}</li>
+    </ul>
+    <!--add an input field for adding a new item-->
+    <input id="input" type="text" v-model="newClub">
+    <button @click = "addClub">Add Club</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+
+<!--where vue js comes in-->
+<script>
+   var app = new Vue({
+       el: '#root',
+       data:{
+           newClub: '',
+           clubs: ['Arsenal','Manchester City','Manchester United','Liverpool','Chelsea']
+       },
+       // METHOD called to add a new item to list
+       methods:{
+           addClub(){
+              this.clubs.push(this.newClub);
+              // RESEt INPUT FIELD TO BLANK
+              this.newClub = '';
+           }
+       }
+
+   });
+
+
+</script>
+
+</body>
+</html>

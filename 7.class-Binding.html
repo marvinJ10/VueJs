@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>1st Vue App</title>
+    <style type="text/css">
+        .body{padding-top: 30px}
+        .active{color: #42b983;}
+        .notActive{color: red}
+    </style>
+</head>
+<body class="body">
+
+<div id="app" class="container">
+    <!--style binding in vuejs using css classes-->
+   <h1 class="static" v-bind:class="{active: isActive, 'notActive': !isActive}"> {{firstname}} </h1><br>
+
+
+    <!--OR-->
+
+    <h1 class="static" v-bind:class="[isActive ? 'active' : 'notActive']"> {{lastname}} </h1><br>
+
+
+</div>
+
+
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    let vm = new Vue({
+        el: '#app',
+        data: {
+            firstname: 'Marvin',
+            lastname: 'James',
+            isActive: true
+
+        }
+    })
+
+
+</script>
+</body>
+</html>

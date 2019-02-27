@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">body{ margin-top: 50px; }</style>
+</head>
+<body>
+
+
+<div class="container">
+
+    <div id="app">
+        <h1> <a v-bind:href="url">{{url}}</a></h1> <!-- v-bind or : directive -->
+        <!--increase or decrease a number by 1 upon clicking it-->
+        <h1 @click="number++">{{ number }}</h1>    <!-- v-on:click or @click directive -->
+        <h1 @click="number1--">{{ number1 }}</h1>    <!-- v-on:click or @click directive -->
+
+        <!--grab the set number and increase upon clicking the submit button-->
+        <form action="" @submit.prevent="number2--"> <!--Decrease by one upon cliking the submit button-->
+            {{ number2 }}
+            <button type="submit">Click to decrease by 1</button>
+
+        </form>
+    </div>
+
+</div>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+<script>
+
+    let vm = new Vue({
+
+        el: '#app',
+        data: {
+            url: 'https://www.youtube.com',
+            message: 'Hellow Marvin',
+            number: 10,
+            number1: 20,
+            number2: 30
+
+
+        }
+
+    })
+
+</script>
+
+
+
+</body>
+</html>

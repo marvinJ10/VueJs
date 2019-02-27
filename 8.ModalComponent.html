@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modal Component</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <style type="text/css">body{padding-top: 30px}</style>
+</head>
+<body>
+<div id="modal" class="container">
+  <modal v-if="showModal" @close="showModal = false">
+      <!--text inserted using js slot-->
+      <p text-info><a href="www.gmail.com">inserted text is here</a> </p>
+  </modal>
+
+
+    <button class="button primary" @click="showModal = true">Show Modal</button>
+
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+<script src="8.main.js"></script>
+
+
+</body>
+</html>

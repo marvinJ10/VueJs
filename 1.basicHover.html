@@ -1,0 +1,27 @@
+<!-- Hover over a button & display txt -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue js Event Listeners</title>
+</head>
+<body>
+<!--set the id for vue js referencing-->
+<div id="root" v-bind="method" :title="title">
+    Hover over me
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+
+<!--where vue js comes in-->
+<script>
+    var app = new Vue({
+        el: '#root',
+        data:{
+            title: 'Title set over Js'
+        }
+
+    });
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>TWO WAY data bInding</title>
+    <style type="text/css">body{
+        margin-top: 50px;}</style>
+</head>
+<body>
+<div class="container" id="root">
+
+    <form action="">
+
+        <div class="col-sm-6">
+            <input v-model="message" type="text" class="form-control">
+        </div>
+
+    </form>
+
+    {{message}}
+
+
+
+</div>
+
+<!-- development version, includes helpful console warnings -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var matchy = new Vue({
+        el: '#root',
+        data: {
+            message: 'Enter Message Here'
+
+        }
+    })
+</script>
+</body>
+</html>

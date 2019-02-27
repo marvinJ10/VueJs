@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<div id="app">
+<h1 v-if="status"> {{message}} </h1>
+    <h1 v-else-if=" message === 'Hellow'"> Hey{{name}}.Welcome to VueJs</h1>
+    <h1 v-else>No User</h1>
+
+</div>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+
+
+<script>
+
+    let vm =  new Vue({
+
+        el: '#app',
+        data: {
+            message: 'Hellow',
+            status: false,
+            name: 'Marvin'
+        }
+    })
+
+</script>

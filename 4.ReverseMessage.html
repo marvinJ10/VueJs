@@ -1,0 +1,46 @@
+<!--Dynamicaclly Change button color upon clicking it -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EP5: Attribute & Class Binding</title>
+
+    <!--styling components-->
+    <style>
+        .is-loading{background: green;}
+    </style>
+
+</head>
+<body>
+<!--set the id for vue js referencing-->
+<div id="root">
+    <!--reverse strings.Split into characters,reverse and then join it again-->
+    <!--{{ message.split('').reverse().join('')}}-->
+
+    {{reversedMessage}}
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.21/dist/vue.js"></script>
+
+<!--where vue js comes in-->
+<script>
+    var app = new Vue({
+        el: '#root',
+
+        data:{
+            message: 'Ndina Were Mundu Wanje!Hope Uendelea Vuleyi sana!!  '
+        },
+
+    //    computed components
+        computed:{
+            reversedMessage(){
+                return this.message.split('').reverse().join('');
+            }
+        }
+    });
+
+</script>
+
+</body>
+</html>
